@@ -11,7 +11,7 @@ class PagesController < ApplicationController
 
   def contest
     flash[:notice] = "Sorry, the contest has ended"
-    redirect_to "/welcome"
+    redirect_to welcome_url
   end
 
   def kitten
@@ -30,7 +30,7 @@ class PagesController < ApplicationController
       render :secrets
     else
       flash[:alert] = "Sorry, you're not authorized to see that page!"
-      render :welcome
+      redirect_to welcome_url
     end
   end
 
